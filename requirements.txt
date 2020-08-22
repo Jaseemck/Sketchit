@@ -1,1 +1,5 @@
 streamlit==0.49.0
+numpy==1.19.1
+opencv-python==4.4.0.42
+Pillow==7.2.0
+protobuf==3.13.0
