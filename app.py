@@ -38,4 +38,5 @@ else:
     st.write("Output Image")
     st.image(final, use_column_width=True)
     if st.button('Download Image'):
-        st.markdown(get_binary_file_downloader_html(final.tobytes(), 'Picture'), unsafe_allow_html=True)
+        st.success('Good')
+        #st.markdown(get_binary_file_downloader_html(bytes(final), 'Picture'), unsafe_allow_html=True)
