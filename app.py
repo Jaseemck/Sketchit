@@ -2,15 +2,6 @@ import streamlit as st
 import cv2
 from PIL import Image
 import numpy as np
-import os
-import base64
-
-def get_binary_file_downloader_html(bin_file, file_label='File'):
-    with open(bin_file, 'rb') as f:
-        data = f.read()
-    bin_str = base64.b64encode(data).decode()
-    href = f'<a href="data:application/octet-stream;base64,{bin_str}" download="{os.path.basename(bin_file)}">Download {file_label}</a>'
-    return href
 
 def dodgeV2(x, y):
     return cv2.divide(x, 255 - y, scale=256)
@@ -37,6 +28,7 @@ else:
     st.image(file_img, use_column_width=True)
     st.write("Output Image")
     st.image(final, use_column_width=True)
-    if st.button('Download Image'):
-        st.success('Good')
-        #st.markdown(get_binary_file_downloader_html(bytes(final), 'Picture'), unsafe_allow_html=True)
+    if st.button('Download the Sketch Image'):
+        im_pil = Image.fromarray(final)
+        im_pil.save('Sketchit_image.jpeg')
+        st.write('Image Downloaded')
