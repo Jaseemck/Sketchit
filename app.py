@@ -3,6 +3,8 @@ import cv2
 from PIL import Image
 import numpy as np
 
+
+st.title('Hello')
 '''
 def dodgeV2(x, y):
     return cv2.divide(x, 255 - y, scale=256)
@@ -16,7 +18,7 @@ def sketchit(img):
 
 def download():
     return f'<a href="{final.jpg}" download="Image.jpeg">Download Img</a>'
-'''
+
 st.set_option('deprecation.showfileUploaderEncoding', False)
 st.title("SketchIt")
 st.success("Now, everyone's an Artist! \U0001f600")
@@ -31,7 +33,6 @@ else:
     st.write("Input Image")
     st.image(file_img, use_column_width=True)
 
-'''
     st.write("Output Image")
     st.image(final, use_column_width=True)
     if st.button('Download Image'):
