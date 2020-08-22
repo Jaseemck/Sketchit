@@ -4,8 +4,6 @@ from PIL import Image
 import numpy as np
 
 
-st.title('Hello')
-'''
 def dodgeV2(x, y):
     return cv2.divide(x, 255 - y, scale=256)
 
@@ -29,12 +27,10 @@ if file_img is None:
     st.warning(":point_left: Upload an Image to Sketch it!")
 else:
     img = Image.open(file_img)
-    #final = sketchit(np.array(img))
+    final = sketchit(np.array(img))
     st.write("Input Image")
     st.image(file_img, use_column_width=True)
-
     st.write("Output Image")
     st.image(final, use_column_width=True)
     if st.button('Download Image'):
         Image.fromarray(final).show()
-'''
